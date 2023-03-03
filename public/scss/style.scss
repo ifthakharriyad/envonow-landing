@@ -1,0 +1,237 @@
+// Importing Spectre styles for using in this file
+@import "variables";
+@import "mixins/position";
+
+// Importing custom variables and mixins.
+@import "cus-vars";
+@import "mixins/cus-mixins";
+
+$body-font-family: 'roboto slab';
+$body-font-color:black;
+// Adding margin classes
+//m-16
+@include margin-variant(16,$unit-16);
+
+// Adding padding classes
+//p-7
+@include padding-variant(9,$unit-9);
+
+#layout{
+	text-align:center;
+	padding:1rem;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight:bold;
+	}
+
+	.sections{
+		margin-bottom:3rem;
+
+		.sticker{
+			width:154px;
+			height:154px;
+		}
+	}	
+}
+
+
+// Hero Logo 
+.hero-logo{
+	margin-top:$unit-3;
+	margin-bottom:$unit-8;
+	
+	@include for-and-lg{
+		margin-top:-$unit-1;
+		margin-bottom:$unit-5;
+	}
+	img{
+		width:200px;
+		display:block;
+		margin: 0 auto;
+
+		@include for-and-lg{
+			width:150px;
+		}
+	}
+}
+
+// Main Hero section
+.main-hero{
+	text-align:center;
+
+	.caption{
+		font-size:0.6rem;
+		line-height:1rem;
+	}
+
+	@include for-des-lg {
+		// importing styles for text elements
+		@include hero-texts($bp-des-lg);
+		.subscribe-input-group{
+			margin:1.5rem;
+		}
+	}
+	@include for-des-md {
+		// importing styles for text elements
+		@include hero-texts($bp-des-md)
+	}
+
+	@include for-des-sm {
+		// importing styles for text elements
+		@include hero-texts($bp-des-sm)
+	}
+
+	@include for-and-lg {
+		// importing styles for text elements
+		@include hero-texts($bp-and-lg);
+		.subscribe-input-group{
+			flex-direction:column;
+			margin-left:0;
+			margin-right:0;
+
+			input[type="email"]{
+				width:100%;
+				margin-bottom:.5rem;
+			}
+		}
+	}
+
+}
+
+// All in one section
+.allinone{
+	.container{
+		margin-top:$unit-16;
+		.columns {
+			row-gap:1rem;
+		}
+		@include for-and-lg{
+			margin-top:$unit-10;
+		}
+	}
+}
+
+// Properties section
+.properties{
+	text-align:left;
+
+		.columns{
+			align-items:center;
+
+			.text-container{
+				flex-grow:4;
+				flex-shrink:1;
+			}
+			.img-container{
+				flex-grow:7;
+				flex-shrink:1;
+
+				img{
+					max-width:100%;
+				}
+			}
+
+			&:nth-child(odd){
+				margin-bottom:$unit-16;
+				.text-container{
+					padding-right:$unit-7;
+				}
+			}
+			&:nth-child(even){
+				.text-container{
+					padding-left:$unit-7;
+				}
+			}
+			@include for-and-lg{
+				&:nth-child(odd){
+					flex-direction:column-reverse;
+					margin-bottom:$unit-5;
+
+					.text-container{
+						padding:$unit-4;
+						//padding-right:0;
+					}
+				}
+				&:nth-child(even){
+					.text-container{
+						padding:$unit-4;
+					}
+				}
+			}
+
+		}
+}
+
+// faq section
+.faq{
+	text-align:left;
+
+	h2{
+		font-size:$h2-des-lg;
+		font-weight:700;
+		margin-bottom:$unit-7;
+	}
+	details{
+		padding: $unit-5;
+		margin-bottom:$unit-5;
+		border-bottom:2px solid lightgrey;
+
+		summary{
+			list-style:none;
+			display:flex;
+			justify-content:space-between;
+			align-items:baseline;
+
+			h3{
+				display:block;
+				max-width:90%;
+				font-size: $unit-8;
+				font-weight:700;
+			}
+			@include for-and-lg{
+				h3{
+					font-size:$unit-6;
+				}
+			}
+			i{
+				display:block;
+				font-size:$unit-5;
+				&:last-of-type{
+					display:none;
+				}
+			}
+		}
+		div{
+
+			p{
+				font-size:$unit-4;
+			}
+			@include for-and-lg{
+				p{
+					font-size:$unit-5;
+				}
+			}
+		}
+
+		&[open] summary {
+			i{
+				&:first-of-type{
+					display:none;
+				}
+				&:last-of-type{
+					display:block;
+				}
+			}
+		}
+	}
+	@include for-and-lg{
+		h2{
+			font-size:$h2-and-lg;
+		}
+	}
+}
+// Importing spectre
+@import "spectre";
+
+// Importing spectre icons
+@import "spectre-icons";
