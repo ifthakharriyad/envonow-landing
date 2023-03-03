@@ -1,0 +1,31 @@
+// variables
+//
+// font
+@font-face {
+	font-family: 'roboto slab';
+	src: url("../fonts/roboto slab/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+// h1
+$h1-des-lg:3.6rem;
+$h1-des-md:$h1-des-lg;
+$h1-des-sm:$h1-des-lg;
+$h1-and-lg:2.3rem;
+
+// h2
+$h2-des-lg:3rem;
+$h2-des-md:$h2-des-lg;
+$h2-des-sm:$h2-des-lg;
+$h2-and-lg:2rem;
+
+// h6
+$h6-des-lg:.9rem;
+$h6-des-md:$h6-des-lg;
+$h6-des-sm:$h6-des-lg;
+$h6-and-lg:.81rem;
+
+// breakpoints
+$bp-des-lg:1920px;
+$bp-des-md:1536px;
+$bp-des-sm:1366px;
+$bp-and-lg:360px;
