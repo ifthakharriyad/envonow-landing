@@ -1,3 +1,3 @@
-module gitlab.com/sustainability4/envonow-landing
+module gitlab.com/sustainability4/envonow
 
 go 1.19
