@@ -1,15 +1,36 @@
 {{ define "main hero" }}
 
 <div class="main-hero sections">
-    <h1>Read what's happening on environment now</h1>
-    <p>Get the latest environmental news and events on Envonow. Subscribe below to be notified of its launch.</p>
-    <form class="column col-8 col-xs-12 col-mx-auto form-group">
-        <div class="input-group subscribe-input-group">
-            <input type="email" class="form-input input-lg" placeholder="Your email">
-            <button type="submit" class="btn btn-primary btn-lg input-group-btn">SUBSCRIBE</button>
-        </div>
-        <span class="caption">Don't worry! We won't clutter your inbox. We will only send approx one email/per week. By subscribing, you agree to receive marketing emails from Envonow.</span>
-    </form>
+  <h1>Read what's happening on environment now</h1>
+  <p>
+    Get the latest environmental news and events on Envonow. Subscribe below to
+    be notified of its launch.
+  </p>
+  <form
+    class="column col-8 col-xs-12 col-mx-auto form-group"
+    action="https://envonow.us14.list-manage.com/subscribe/post"
+    method="POST"
+  >
+    <input type="hidden" name="u" value="51563b424f6177a790b06cd92" />
+    <input type="hidden" name="id" value="4728b598a7" />
+    <div class="input-group subscribe-input-group">
+      <input
+        type="email"
+        class="form-input input-lg"
+        placeholder="Your email"
+        name="MERGE0"
+        id="MERGE0"
+      />
+      <button type="submit" class="btn btn-primary btn-lg input-group-btn">
+        SUBSCRIBE
+      </button>
+    </div>
+    <span class="caption"
+      >Don't worry! We won't clutter your inbox. We will only send approx one
+      email/per week. By subscribing, you agree to receive marketing emails from
+      Envonow.</span
+    >
+  </form>
 </div>
 
 {{ end }}
