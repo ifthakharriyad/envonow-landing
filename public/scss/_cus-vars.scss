@@ -2,30 +2,68 @@
 //
 // font
 @font-face {
-	font-family: 'roboto slab';
-	src: url("../fonts/roboto slab/RobotoSlab-Regular.ttf") format("truetype");
+  font-family: "roboto slab";
+  src: url("../fonts/roboto slab/RobotoSlab-Regular.ttf") format("truetype");
 }
 
+// Core colors
+$primary-color: #445c3c;
+$primary-color-dark: darken($primary-color, 3%);
+$primary-color-light: lighten($primary-color, 3%);
+$secondary-color: lighten($primary-color, 37.5%);
+$secondary-color-dark: darken($secondary-color, 3%);
+$secondary-color-light: lighten($secondary-color, 3%);
+$tertiary-color: #543c5c;
+$tertiary-color-dark: darken($tertiary-color, 3%);
+$tertiary-color-light: lighten($tertiary-color, 3%);
+
+// Gray colors
+$dark-color: darken($primary-color, 22%);
+$light-color: #fff;
+$gray-color: lighten($dark-color, 55%);
+$gray-color-dark: darken($gray-color, 30%);
+$gray-color-light: lighten($gray-color, 20%);
+
+$border-color: lighten($dark-color, 65%);
+$border-color-dark: darken($border-color, 10%);
+$border-color-light: lighten($border-color, 8%);
+$bg-color: lighten($dark-color, 75%);
+$bg-color-dark: darken($bg-color, 3%);
+$bg-color-light: lighten(#f1fff9, 1%);
+
+// Control colors
+$success-color: #32b643;
+$warning-color: #ffb700;
+$error-color: #e85600;
+
+// Other colors
+$code-color: #d73e48;
+$highlight-color: #ffe9b3;
+$body-bg: $bg-color-light;
+$body-font-color: lighten($dark-color, 5%);
+$link-color: $primary-color;
+$link-color-dark: darken($link-color, 10%);
+$link-color-light: lighten($link-color, 10%);
 // h1
-$h1-des-lg:3.6rem;
-$h1-des-md:$h1-des-lg;
-$h1-des-sm:$h1-des-lg;
-$h1-and-lg:2.3rem;
+$h1-des-lg: 3.6rem;
+$h1-des-md: $h1-des-lg;
+$h1-des-sm: $h1-des-lg;
+$h1-and-lg: 2.3rem;
 
 // h2
-$h2-des-lg:3rem;
-$h2-des-md:$h2-des-lg;
-$h2-des-sm:$h2-des-lg;
-$h2-and-lg:2rem;
+$h2-des-lg: 3rem;
+$h2-des-md: $h2-des-lg;
+$h2-des-sm: $h2-des-lg;
+$h2-and-lg: 2rem;
 
 // h6
-$h6-des-lg:.9rem;
-$h6-des-md:$h6-des-lg;
-$h6-des-sm:$h6-des-lg;
-$h6-and-lg:.81rem;
+$h6-des-lg: 0.9rem;
+$h6-des-md: $h6-des-lg;
+$h6-des-sm: $h6-des-lg;
+$h6-and-lg: 0.81rem;
 
 // breakpoints
-$bp-des-lg:1920px;
-$bp-des-md:1536px;
-$bp-des-sm:1366px;
-$bp-and-lg:360px;
+$bp-des-lg: 1920px;
+$bp-des-md: 1536px;
+$bp-des-sm: 1366px;
+$bp-and-lg: 360px;
