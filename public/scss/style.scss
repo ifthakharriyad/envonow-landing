@@ -159,7 +159,6 @@ $body-font-color: black;
 
   .columns {
     align-items: center;
-
     .text-container {
       flex-grow: 4;
       flex-shrink: 1;
@@ -172,38 +171,38 @@ $body-font-color: black;
         max-width: 100%;
       }
     }
-
-    .odd-col {
-      padding-bottom: -$unit-16;
-      .text-container {
-        padding-right: $unit-7;
-      }
+  }
+  .odd-col {
+    padding-top: $unit-8;
+    padding-bottom: $unit-8;
+    .text-container {
+      padding-right: $unit-7;
     }
-    .even-col {
-      padding-top: $unit-16;
-      padding-bottom: $unit-16;
-      background-color: #faefc8;
+  }
+  .even-col {
+    padding-top: $unit-16;
+    padding-bottom: $unit-16;
+    background-color: #faefc8;
 
-      .text-container {
-        padding-left: $unit-7;
-      }
+    .text-container {
+      padding-left: $unit-7;
     }
-    @include for-and-lg {
-      .text-container {
-        padding: $unit-5 $unit-8;
-      }
-      .odd-col {
-        flex-direction: column-reverse;
-        margin-bottom: $unit-5;
-
+  }
+  @include for-and-lg {
+    .columns {
+      .column {
         .text-container {
-          //padding: $unit-4;
-          //padding-right:0;
+          padding: $unit-5 $unit-8;
         }
-      }
-      .even-col {
-        .text-container {
-          //padding: $unit-4;
+        .odd-col {
+          flex-direction: column-reverse;
+          margin-bottom: $unit-5;
+        }
+        .even-col {
+          .img-container {
+            padding-left: 0;
+            padding-right: 0;
+          }
         }
       }
     }
@@ -280,6 +279,21 @@ $body-font-color: black;
   @include for-and-lg {
     h2 {
       font-size: $h2-and-lg;
+    }
+  }
+}
+
+// footer section
+.footer {
+  ul {
+    margin-bottom: $unit-16;
+    li {
+      list-style: none;
+      a {
+        font-weight: bold;
+        color: black;
+        text-decoration: underline;
+      }
     }
   }
 }

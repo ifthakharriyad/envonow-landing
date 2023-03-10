@@ -219,27 +219,32 @@
 .properties .columns .img-container img {
   max-width: 100%;
 }
-.properties .columns .odd-col {
-  padding-bottom: -3.2rem;
+.properties .odd-col {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
 }
-.properties .columns .odd-col .text-container {
+.properties .odd-col .text-container {
   padding-right: 1.4rem;
 }
-.properties .columns .even-col {
+.properties .even-col {
   padding-top: 3.2rem;
   padding-bottom: 3.2rem;
   background-color: #faefc8;
 }
-.properties .columns .even-col .text-container {
+.properties .even-col .text-container {
   padding-left: 1.4rem;
 }
 @media (max-width: 360px) {
-  .properties .columns .text-container {
+  .properties .columns .column .text-container {
     padding: 1rem 1.6rem;
   }
-  .properties .columns .odd-col {
+  .properties .columns .column .odd-col {
     flex-direction: column-reverse;
     margin-bottom: 1rem;
+  }
+  .properties .columns .column .even-col .img-container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -303,6 +308,18 @@
   .faq h2 {
     font-size: 2rem;
   }
+}
+
+.footer ul {
+  margin-bottom: 3.2rem;
+}
+.footer ul li {
+  list-style: none;
+}
+.footer ul li a {
+  font-weight: bold;
+  color: black;
+  text-decoration: underline;
 }
 
 /*! Spectre.css v0.5.9 | MIT License | github.com/picturepan2/spectre */
