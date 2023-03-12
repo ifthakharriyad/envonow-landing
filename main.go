@@ -5,13 +5,22 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load(".env")
+
+    if err != nil {
+        log.Fatal("Error loading .env file")
+    }
+	
 	mux := http.NewServeMux()
 
 	// Serves static files from the public directory
-	stfiles := http.FileServer(http.Dir("public"))
+	stfiles := http.FileServer(http.Dir(os.Getenv("STATIC")))
 	mux.Handle("/static/", http.StripPrefix("/static/", stfiles))
 
 	// GET /error
@@ -23,7 +32,7 @@ func main() {
 
 	// defining and starting server
 	server := &http.Server{
-		Addr:    "127.0.0.1:8000",
+		Addr:    os.Getenv("ADDRESS"),
 		Handler: mux,
 	}
 	log.Fatal(server.ListenAndServe())
@@ -50,5 +59,6 @@ func index(w http.ResponseWriter, r *http.Request) {
 		danger(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
-	template.ExecuteTemplate(w, "layout", nil)
+
+	template.ExecuteTemplate(w, "layout", os.Getenv("FORM_HERO_LINK"))
 }
