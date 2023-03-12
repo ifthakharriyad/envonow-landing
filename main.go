@@ -6,13 +6,13 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/joho/godotenv"
 )
 
 func main() {
 	err := godotenv.Load(".env")
-
     if err != nil {
         log.Fatal("Error loading .env file")
     }
@@ -34,6 +34,9 @@ func main() {
 	server := &http.Server{
 		Addr:    os.Getenv("ADDRESS"),
 		Handler: mux,
+		ReadTimeout: time.Duration(int(10*time.Second)),
+		WriteTimeout: time.Duration(int(600*time.Second)),
+		MaxHeaderBytes: 1<<20,
 	}
 	log.Fatal(server.ListenAndServe())
 }
